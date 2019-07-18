@@ -4,10 +4,10 @@ import React from 'react';
 function Footer() {
     return (
 
-        <div id="footer" className="text-center navbar-fixed-bottom">
+        <div id="footer" className="text-center navbar-fixed-bottom mt-auto">
         <div className="container">
           <div>
-          <a href="/"><img src="css_js/images/logo1.png" alt="logo" style={{ width: '15%', paddingBottom: '2em'}}/></a>
+          <a href="/"><img src="/css_js/images/logo1.png" alt="logo" style={{ width: '15%', paddingBottom: '2em'}}/></a>
           </div>
           <div className="socials-media text-center">
          

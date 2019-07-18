@@ -8,7 +8,7 @@ $(document).ready(function() {
   // ========================================================================= //
 
 
-  $(document).on("scroll", onScroll);
+  // $(document).on("scroll", onScroll);
 
   $('a[href^="#"]').on('click', function(e) {
     e.preventDefault();
@@ -31,20 +31,20 @@ $(document).ready(function() {
       'scrollTop': target.offset().top - 80
     }, 500, 'swing', function() {
       window.location.hash = target.selector;
-      $(document).on("scroll", onScroll);
+      // $(document).on("scroll", onScroll);
     });
   });
 
 
-  function onScroll(event) {
-    if ($('.home').length) {
-      var scrollPos = $(document).scrollTop();
-      $('nav ul li a').each(function() {
-        var currLink = $(this);
-        var refElement = $(currLink.attr("href"));
-      });
-    }
-  }
+  // function onScroll(event) {
+  //   if ($('.home').length) {
+  //     var scrollPos = $(document).scrollTop();
+  //     $('nav ul li a').each(function() {
+  //       var currLink = $(this);
+  //       var refElement = $(currLink.attr("href"));
+  //     });
+  //   }
+  // }
 
   // ========================================================================= //
   //  //NAVBAR SHOW - HIDE
