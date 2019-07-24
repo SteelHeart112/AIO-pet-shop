@@ -4,7 +4,15 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import {ButtonContainer} from './Button';
 
-const NavBar = ({ token }) => {
+
+const NavBar = ( {isLogged} ) => {
+  // const [modal, setModal] = useState(false)
+  
+
+  // toggle = () => {
+  //   setModal(true)
+  // }
+
   const clearBEToken = async () => {
     fetch('https://127.0.0.1:5000/logout', {
       method: 'get',
@@ -14,12 +22,14 @@ const NavBar = ({ token }) => {
       })
     });
   };
+  
   const cleartoken = e => {
     e.preventDefault();
     clearBEToken();
     sessionStorage.clear('token');
     window.location.replace('http://localhost:3000/login');
   };
+
   return (
     <nav id='main-nav'>
       <div className='row'>
@@ -45,15 +55,18 @@ const NavBar = ({ token }) => {
                 About
               </a>
             </li>
-            <li>
-              <Nav.Link
-                href='/login'
-                className='smoothScroll'
-                style={{ padding: 0 }}
-              >
-                Login
-              </Nav.Link>
-            </li>
+              {!isLogged && 
+               <li>
+               <Nav.Link
+                 href='/login'
+                 className='smoothScroll'
+                 style={{ padding: 0 }}
+               >
+                 Login
+               </Nav.Link>
+             </li>
+              }
+            {isLogged &&
             <li>
               <Nav.Link
                 onClick={e => cleartoken(e)}
@@ -63,24 +76,21 @@ const NavBar = ({ token }) => {
                 Logout
               </Nav.Link>
             </li>
-            <li>
-              <a href='#journal' className='smoothScroll'>
-                Why
-              </a>
-            </li>
+            }
+            {isLogged &&
             <li>
               <Nav.Link
-              href='/Cart' 
               className='smoothScroll'
               style={{ padding: 0 }}
               >
               <ButtonContainer>
               <span className='mr-2'>
-              <i class="fa fa-shopping-cart" aria-hidden="true">My cart</i>
+              <i className="fa fa-shopping-cart" aria-hidden="true"></i>
               </span>
               </ButtonContainer>
               </Nav.Link>
             </li>
+            }
           </ul>
         </div>
       </div>

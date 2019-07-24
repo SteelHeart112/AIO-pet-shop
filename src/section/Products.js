@@ -3,23 +3,16 @@ import journal_card from '../components/journal_card';
 import Footer from './Footer';
 import { BrowserRouter as Router, Route, Link, Switch, withRouter } from "react-router-dom";
 import styled from 'styled-components';
-import Navbar2 from './navbar2';
-
+import NavBar from '../components/navbar';
 
 function Products() {
     // console.log('PRODUCTS', props)
 
     const [data, setData] = useState([]);
     const [inCart, setCart] = useState(false);
-
-
-    const addToCart = () => {
-        console.log('GET product id', data)
-        // setCart(inCart);
-    }
     
     const getProducts = () => {
-        fetch('https://127.0.0.1:5000/products')
+      fetch('https://127.0.0.1:5000/products')
         .then(res => res.json())
         .then(info => {
             console.log('$$$$$$$', info)
@@ -35,7 +28,7 @@ function Products() {
 
         return (
 <>      
-<Navbar2 />
+<NavBar />
 
         <div className="jumbotron bg" style={{backgroundImage:"url('css_js/images/about-us3.jpg')", height:'35em'}}>
             <h1 className="display-4 mt-4" style={{color:'white', fontSize:'70px', fontWeight:'bolder'}}>Products</h1>
@@ -54,7 +47,7 @@ function Products() {
             </div>
         </div>
 
-        <ProductWrapper className='col-9 mx-auto col-md-6 col-lg-3 my-3'>
+        <ProductWrapper style={{display:'flex', justifyContent: 'space-evenly',flexWrap: 'wrap'}}>
             {data.map(({name,img,price, product_id}) => {
                         return (
         <div className='card'>

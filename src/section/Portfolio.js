@@ -16,12 +16,12 @@ function Portfolio() {
                     <div className="col-md-12">
                     <div className="portfolio-list">
                         <ul className="nav list-unstyled" id="portfolio-flters">
-                        <li className="filter filter-active" data-filter=".all">Beer</li>
-                        <li className="filter" data-filter=".branding">Beer</li>
-                        <li className="filter" data-filter=".mockups">Beer</li>
-                        <li className="filter" data-filter=".uikits">Beer</li>
-                        <li className="filter" data-filter=".webdesign">Beer</li>
-                        <li className="filter" data-filter=".photography">Beer</li>
+                        <li className="filter filter-active" data-filter=".all">Summer</li>
+                        <li className="filter" data-filter=".branding">Winter</li>
+                        <li className="filter" data-filter=".mockups">Spring</li>
+                        <li className="filter" data-filter=".uikits">Dark</li>
+                        <li className="filter" data-filter=".webdesign">Light</li>
+                        <li className="filter" data-filter=".photography">Ales</li>
                         </ul>
                     </div>
                     </div>
@@ -29,16 +29,17 @@ function Portfolio() {
             </div>
 
             <div className="portfolio-container">
-
+            helloooowrejgfhwefkljwelfihweflijwefliwejril
                 {portfolio_pic.map(portfolio => {
                     return portfolio_card(portfolio)})
                     }
-
+              
                 {/* {portfolio_card(portfolio_pic.pic2)}
                 {portfolio_card(portfolio_pic.pic3)}
                 {portfolio_card(portfolio_pic.pic4)}
                 {portfolio_card(portfolio_pic.pic5)}
                 {portfolio_card(portfolio_pic.pic6)} */}
+                 {portfolio_pic.map(portfolio => { portfolio_card(portfolio)})}
 
             </div>
         </div>

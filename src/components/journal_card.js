@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 function JournalCard(item) {
     const [data] = useState(item)
     return (
+        
         <div className="col-lg-4 col-md-6">
             <div className="journal-info">
 

@@ -13,10 +13,10 @@ function Journal() {
             <div className="container">
                 <div className="journal-block">
                     <div className="row">
-                        { journal_info.map(journal => {
-                            return journal_card(journal)})
-                        }
-
+                        
+                        {journal_info.map(journal => {
+                    return journal_card(journal)
+                        })}
                         
                         {/* {journal_card(journal_info.journal2)}
                         {journal_card(journal_info.journal3)} */}
