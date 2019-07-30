@@ -1,23 +1,13 @@
 import React from 'react';
-import { Button, Navbar, Nav } from 'react-bootstrap';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import styled from 'styled-components';
-import {ButtonContainer} from './Button';
+import { Nav, Button } from 'react-bootstrap';
 
 
 const NavBar = ( {isLogged} ) => {
-  // const [modal, setModal] = useState(false)
-  
-
-  // toggle = () => {
-  //   setModal(true)
-  // }
-
   const clearBEToken = async () => {
     fetch('https://127.0.0.1:5000/logout', {
       method: 'get',
       headers: new Headers({
-        Authorization: `Token ${sessionStorage.getItem('token')}`,
+        Authorization: `Token ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json'
       })
     });
@@ -26,8 +16,8 @@ const NavBar = ( {isLogged} ) => {
   const cleartoken = e => {
     e.preventDefault();
     clearBEToken();
-    sessionStorage.clear('token');
-    window.location.replace('http://localhost:3000/login');
+    localStorage.clear('token');
+    window.location.replace('http://localhost:3000/');
   };
 
   return (
@@ -39,15 +29,13 @@ const NavBar = ( {isLogged} ) => {
               <img src='css_js/images/logo1.png' alt='logo' />
             </a>
           </div>
-
           <div className='responsive'>
             <i data-icon='m' className='ion-navicon-round' />
           </div>
-
           <ul className='nav-menu list-unstyled'>
             <li>
-              <a href='#header' className='smoothScroll'>
-                Home
+              <a href='/products' className='smoothScroll'>
+                Products
               </a>
             </li>
             <li>
@@ -66,6 +54,17 @@ const NavBar = ( {isLogged} ) => {
                </Nav.Link>
              </li>
               }
+              {!isLogged && 
+               <li>
+               <Nav.Link
+                 href='/register'
+                 className='smoothScroll'
+                 style={{ padding: 0 }}
+               >
+                 Sign up
+               </Nav.Link>
+             </li>
+              }              
             {isLogged &&
             <li>
               <Nav.Link
@@ -77,17 +76,39 @@ const NavBar = ( {isLogged} ) => {
               </Nav.Link>
             </li>
             }
+              {isLogged && 
+               <li>
+               <Nav.Link
+                 href='/createproduct'
+                 className='smoothScroll'
+                 style={{ padding: 0 }}
+               >
+                 Create Product
+               </Nav.Link>
+             </li>
+              }
+                {isLogged && 
+               <li>
+               <Nav.Link
+                 href='/profile'
+                 className='smoothScroll'
+                 style={{ padding: 0 }}
+               >
+                 Profile
+               </Nav.Link>
+             </li>
+              }
             {isLogged &&
             <li>
               <Nav.Link
               className='smoothScroll'
               style={{ padding: 0 }}
               >
-              <ButtonContainer>
+              <Button>
               <span className='mr-2'>
               <i className="fa fa-shopping-cart" aria-hidden="true"></i>
               </span>
-              </ButtonContainer>
+              </Button>
               </Nav.Link>
             </li>
             }

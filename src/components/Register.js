@@ -1,59 +1,74 @@
 import React from 'react';
 import Footer from './Footer';
-import Navbar2 from './navbar2';
-import Register from './Register';
+import Navbar2 from './Subnav';
 
-class Login extends React.Component {
+class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: '',
       email: '',
-      password: ''
+      password: '',
+      pass_confirm: ''
     };
   }
 
-  signin = async e => {
+  register = async e => {
     e.preventDefault();
-    let send = { email: this.state.email.toLowerCase(), password: this.state.password };
-    console.log('send', send);
+    let send = {
+      name: this.state.name.toLowerCase(),
+      email: this.state.email.toLowerCase(),
+      password: this.state.password,
+      pass_confirm: this.state.password
+    };
 
-    const response = await fetch('https://127.0.0.1:5000/login', {
+    const response = await fetch('https://127.0.0.1:5000/register', {
       method: 'POST',
       body: JSON.stringify(send),
       headers: new Headers({
-        Authorization: `Token ${sessionStorage.getItem('token')}`,
+        Authorization: `Token ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json'
       })
     });
     const result = await response.json();
-    console.log('status', result);
     if (result.status === 'ok')
-      return window.location.replace(
-        'http://localhost:3000/?api_key=' + result.token
-      );
+      return alert(result.message)
+      
     else if (result.status === 'fail') return alert(result.message);
   };
 
   handleOnChange = e => {
     const name = e.target.name;
     const value = e.target.value;
-    if (value !== '') {
-      this.setState({ [name]: value });
+    if(value !== '') {
+        this.setState({[name]: value})
     }
-  };
+  }
 
   render() {
-    // console.log('khoa',this.state.email)
     return (
       <>
-        <Navbar2 />
+      <Navbar2 />
         <div className='App'>
           <div className='container'>
             <div className='row'>
               <div className='col-sm-9 col-md-7 col-lg-5 mx-auto'>
                 <div className='card card-signin my-5'>
                   <div className='card-body'>
-                    <h5 className='card-title text-center'>Sign In</h5>
+                    <h5 className='card-title text-center'>Register</h5>
+                    <div className='form-label-group'>
+                      <input
+                        type='name'
+                        id='inputName'
+                        name='name'
+                        onChange={e => this.handleOnChange(e)}
+                        className='form-control'
+                        placeholder='Full name'
+                        required
+                        autofocus
+                      />
+                      <label htmlFor='inputEmail'>Email address</label>
+                    </div>
                     <div className='form-label-group'>
                       <input
                         type='email'
@@ -79,6 +94,18 @@ class Login extends React.Component {
                       />
                       <label htmlFor='inputPassword'>Password</label>
                     </div>
+                    <div className='form-label-group'>
+                      <input
+                        type='password'
+                        id='pass_confirm'
+                        name='pass_confirm'
+                        onChange={e => this.handleOnChange(e)}
+                        className='form-control'
+                        placeholder='Confirm password'
+                        required
+                      />
+                      <label htmlFor='inputPassword'>Password</label>
+                    </div>
                     <div className='custom-control custom-checkbox mb-3'>
                       <input
                         type='checkbox'
@@ -94,17 +121,11 @@ class Login extends React.Component {
                     </div>
                     <button
                       className='btn btn-lg btn-primary btn-block text-uppercase'
-                      onClick={e => this.signin(e)}
+                      onClick={e => this.register(e)}
                     >
-                      Sign in
+                      Register
                     </button>
                     <hr className='my-4' />
-                    <button
-                      className='btn btn-lg btn-google btn-block text-uppercase'
-                      type='submit'
-                    >
-                      <i className='fab fa-google mr-2' /> Sign in with Google
-                    </button>
                     <a href='https://127.0.0.1:5000/login/facebook'>
                       <button
                         className='btn btn-lg btn-facebook btn-block text-uppercase'
@@ -114,6 +135,7 @@ class Login extends React.Component {
                         Facebook
                       </button>
                     </a>
+                    <a href='/login'> Have an account already? Log in now! </a>
                     <form />
                   </div>
                 </div>
@@ -121,8 +143,6 @@ class Login extends React.Component {
             </div>
           </div>
           <div />
-          <Register />
-
           <Footer />
         </div>
       </>
@@ -130,4 +150,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default Register;

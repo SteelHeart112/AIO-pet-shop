@@ -1,96 +1,86 @@
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Login from './section/Login';
 import {
     BrowserRouter as Router,
     Route,
-    Link,
     Switch,
-    withRouter
 } from 'react-router-dom';
-import Homepage from './section/Homepage';
-import Products from './section/Products';
-import Single_product from './section/Single_product';
-import Cart from './section/Cart';
+import Login from './components/Login';
+import Register from './components/Register';
+import Homepage from './components/Homepage';
+import Products from './components/Products';
+import CreateProduct from './components/CreateProduct'
+import Profile from './components/UserProfile'
+import ProductDetails from './components/ProductDetails';
+import SortCategory from './components/SortByCategory';
 
 function App() {
     const [token, setToken] = useState('');
     const[currentUser, setCurrentUser] = useState({id:null})
     const [products, setProducts] = useState([]);
     const [isLogged, setIsLogged] = useState(false);
-    console.log('batman ', products)
+    console.log('products ', products)
 
-    
     const accessToken =
-    window.location.search.split('=')[0] === '?api_key'
+    window.location.search.split('=')[0] === '?access_token'
     ? window.location.search.split('=')[1]
     : null;
-    const existingToken = sessionStorage.getItem('token');
-
-
-    
-    useEffect(() => {
-        getUser()
-       
-        if (accessToken) {
-            sessionStorage.setItem('token', accessToken.replace('?api_key=', ''));
-            setToken(accessToken.replace('?api_key=', ''));
-            setIsLogged(true);
-        }
-        if (existingToken) {
-            setToken(existingToken.replace('?api_key=', ''));
-            setIsLogged(true);
-        }
-    },[]);
+    const existingToken = localStorage.getItem('token');
     
     const getUser = async () => {
-        const response = await fetch('https://127.0.0.1:5000/checklogin', {
+        const response = await fetch('https://127.0.0.1:5000/profile', {
             headers: {
-              Authorization: `Token ${sessionStorage.getItem('token')}`,
+              'Authorization': `Token ${localStorage.getItem('token')}`,
               'Content-Type': 'application/json'
             },
           })
           const result = await response.json()
           setCurrentUser(result)
-
-          console.log('RESPONSE IN APP', response)
     }
+    console.log("token", token)
 
-
+    useEffect(() => {
+        getUser()
+        if (accessToken) {
+            localStorage.setItem('token', accessToken.replace('?access_token=', ''));
+            setToken(accessToken.replace('?access_token=', ''));
+            setIsLogged(true);
+        }
+        if (existingToken) {
+            setToken(existingToken.replace('?access_token=', ''));
+            setIsLogged(true);
+        }
+    },[]);
 
     return (
         <div className="App">
             <Router>
                 <Switch>
-                <Route
-                    exact
-                    path='/'
-                    render={() => <Homepage token={token} isLogged={isLogged}  />}
-                />
-                <Route exact path='/login' component={Login} />
-                <Route exact path='/products' component={Products}/>
-                {/* <Route exact path='/cart' 
-                    component={(props) => {
-                        return <Cart
-                        {...props}
-                        currentUser={currentUser}
-                        products={products}
-                        setProducts={setProducts}
-                        />
-                    }} /> */}
-                <Route
-                    exact
-                    path='/products/:id'
-                    component={(props) => {
-                       return  <Single_product
+                <Route exact path='/' 
+                render={() => <Homepage token={token} isLogged={isLogged} />}/>
+                <Route exact path='/login' component={Login}/>
+                <Route exact path='/register' component={Register}/>
+                <Route exact path='/products' 
+                render={() => <Products isLogged={isLogged} />}/>
+                <Route exact path="/createproduct" component = {CreateProduct}/>
+                <Route exact path='/profile' 
+                render={() => <Profile isLogged={isLogged} />}/>
+                <Route exact path='/products/:id' 
+                component={(props) => { return <ProductDetails
                                 {...props}
                                 currentUser={currentUser}
                                 products={products}
-                            setProducts={setProducts} 
+                                isLogged={isLogged}
                         />
-                    }}
-                />
+                    }}/>
+                <Route exact path='/category/:category' 
+                component={(props) => { return <SortCategory
+                                {...props}
+                                currentUser={currentUser}
+                                products={products}
+                                isLogged={isLogged}
+                        />
+                    }}/>
                 </Switch>
             </Router>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function navbar2() {
+function SubNav() {
     return (
 
         <div id="footer" className="text-center navbar-fixed-top mt-auto">
@@ -16,4 +16,4 @@ function navbar2() {
     )
 }
 
-export default navbar2;
+export default SubNav;

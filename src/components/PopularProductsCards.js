@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-function Portfolio_card(item) {
+
+function PopularProductsCards(item) {
     const [data] = useState(item)
     return (
         <div className={data.class}>
@@ -8,9 +9,8 @@ function Portfolio_card(item) {
                 <img src={data.img} alt="img"/>
             </a>
         </div>
-
     )
 }
 
-export default Portfolio_card;
+export default PopularProductsCards;
 
