@@ -17,7 +17,7 @@ const NavBar = ( {isLogged} ) => {
     e.preventDefault();
     clearBEToken();
     localStorage.clear('token');
-    window.location.replace('http://localhost:3000/');
+    window.location.replace('https://aio-pet-shop.netlify.com/');
   };
 
   return (
@@ -25,7 +25,7 @@ const NavBar = ( {isLogged} ) => {
       <div className='row'>
         <div className='container'>
           <div className='logo'>
-            <a href='/'>
+            <a href='https://aio-pet-shop.netlify.com/'>
               <img src='css_js/images/logo1.png' alt='logo' />
             </a>
           </div>
@@ -34,7 +34,7 @@ const NavBar = ( {isLogged} ) => {
           </div>
           <ul className='nav-menu list-unstyled'>
             <li>
-              <a href='/products' className='smoothScroll'>
+              <a href='https://aio-pet-shop.netlify.com/products' className='smoothScroll'>
                 Products
               </a>
             </li>
@@ -46,7 +46,7 @@ const NavBar = ( {isLogged} ) => {
               {!isLogged && 
                <li>
                <Nav.Link
-                 href='/login'
+                 href='https://aio-pet-shop.netlify.com/login'
                  className='smoothScroll'
                  style={{ padding: 0 }}
                >
@@ -57,7 +57,7 @@ const NavBar = ( {isLogged} ) => {
               {!isLogged && 
                <li>
                <Nav.Link
-                 href='/register'
+                 href='https://aio-pet-shop.netlify.com/register'
                  className='smoothScroll'
                  style={{ padding: 0 }}
                >
@@ -79,7 +79,7 @@ const NavBar = ( {isLogged} ) => {
               {isLogged && 
                <li>
                <Nav.Link
-                 href='/createproduct'
+                 href='https://aio-pet-shop.netlify.com/createproduct'
                  className='smoothScroll'
                  style={{ padding: 0 }}
                >
@@ -90,7 +90,7 @@ const NavBar = ( {isLogged} ) => {
                 {isLogged && 
                <li>
                <Nav.Link
-                 href='/profile'
+                 href='https://aio-pet-shop.netlify.com/profile'
                  className='smoothScroll'
                  style={{ padding: 0 }}
                >
