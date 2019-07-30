@@ -58,7 +58,7 @@ function App() {
                 <Switch>
                 <Route exact path='/' 
                 render={() => <Homepage token={token} isLogged={isLogged} />}/>
-                <Route exact path='/login' component={Login}/>
+                <Route exact path='https://aio-pet-shop.netlify.com/login' component={Login}/>
                 <Route exact path='/register' component={Register}/>
                 <Route exact path='/products' 
                 render={() => <Products isLogged={isLogged} />}/>
