@@ -96,7 +96,7 @@ class Login extends React.Component {
                       Sign in
                     </button>
                     <hr className='my-4' />
-                    <a href='https://127.0.0.1:5000/login/facebook'>
+                    <a href='https://pet-shop-final-project.herokuapp.com/login/facebook'>
                       <button
                         className='btn btn-lg btn-facebook btn-block text-uppercase'
                         type='submit'
