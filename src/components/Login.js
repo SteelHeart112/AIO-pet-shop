@@ -27,7 +27,7 @@ class Login extends React.Component {
     const result = await response.json();
     if (result.status === 'ok')
       return window.location.replace(
-        'https://aio-pet-shop.netlify.com/?access_token=' + result.token
+        'http://localhost:3000/?access_token=' + result.token
       );
     else if (result.status === 'fail') return alert(result.message);
   };
@@ -105,7 +105,7 @@ class Login extends React.Component {
                         Facebook
                       </button>
                     </a>
-                    <a href='https://aio-pet-shop.netlify.com/register'> Not have an account yet? Sign up now! </a>
+                    <a href='/register'> Not have an account yet? Sign up now! </a>
                     <form />
                   </div>
                 </div>

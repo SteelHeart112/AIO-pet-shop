@@ -135,7 +135,7 @@ class Register extends React.Component {
                         Facebook
                       </button>
                     </a>
-                    <a href='https://aio-pet-shop.netlify.com//login'> Have an account already? Log in now! </a>
+                    <a href='/login'> Have an account already? Log in now! </a>
                     <form />
                   </div>
                 </div>

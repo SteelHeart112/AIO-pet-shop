@@ -58,7 +58,7 @@ class ProductDetails extends React.Component {
               {this.state.details.description}
               </p>
               <div>
-                <Link to='https://aio-pet-shop.netlify.com/products'>
+                <Link to='/products'>
                   <Button>back to products</Button>
                 </Link>
               </div>

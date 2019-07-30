@@ -25,7 +25,7 @@ const NavBar = ( {isLogged} ) => {
       <div className='row'>
         <div className='container'>
           <div className='logo'>
-            <a href='https://aio-pet-shop.netlify.com/'>
+            <a href='/'>
               <img src='css_js/images/logo1.png' alt='logo' />
             </a>
           </div>
@@ -34,7 +34,7 @@ const NavBar = ( {isLogged} ) => {
           </div>
           <ul className='nav-menu list-unstyled'>
             <li>
-              <a href='https://aio-pet-shop.netlify.com/products' className='smoothScroll'>
+              <a href='/products' className='smoothScroll'>
                 Products
               </a>
             </li>
@@ -46,7 +46,7 @@ const NavBar = ( {isLogged} ) => {
               {!isLogged && 
                <li>
                <Nav.Link
-                 href='https://aio-pet-shop.netlify.com/login'
+                 href='/login'
                  className='smoothScroll'
                  style={{ padding: 0 }}
                >
@@ -57,7 +57,7 @@ const NavBar = ( {isLogged} ) => {
               {!isLogged && 
                <li>
                <Nav.Link
-                 href='https://aio-pet-shop.netlify.com/register'
+                 href='/register'
                  className='smoothScroll'
                  style={{ padding: 0 }}
                >
@@ -79,7 +79,7 @@ const NavBar = ( {isLogged} ) => {
               {isLogged && 
                <li>
                <Nav.Link
-                 href='https://aio-pet-shop.netlify.com/createproduct'
+                 href='/createproduct'
                  className='smoothScroll'
                  style={{ padding: 0 }}
                >
@@ -90,7 +90,7 @@ const NavBar = ( {isLogged} ) => {
                 {isLogged && 
                <li>
                <Nav.Link
-                 href='https://aio-pet-shop.netlify.com/profile'
+                 href='/profile'
                  className='smoothScroll'
                  style={{ padding: 0 }}
                >

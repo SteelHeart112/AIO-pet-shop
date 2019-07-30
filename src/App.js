@@ -56,16 +56,16 @@ function App() {
         <div className="App">
             <Router>
                 <Switch>
-                <Route exact path='https://aio-pet-shop.netlify.com/' 
+                <Route exact path='/' 
                 render={() => <Homepage token={token} isLogged={isLogged} />}/>
-                <Route exact path='https://aio-pet-shop.netlify.com/login' component={Login}/>
-                <Route exact path='https://aio-pet-shop.netlify.com/register' component={Register}/>
-                <Route exact path='https://aio-pet-shop.netlify.com/products' 
+                <Route exact path='/login' component={Login}/>
+                <Route exact path='/register' component={Register}/>
+                <Route exact path='/products' 
                 render={() => <Products isLogged={isLogged} />}/>
-                <Route exact path="https://aio-pet-shop.netlify.com/createproduct" component = {CreateProduct}/>
-                <Route exact path='https://aio-pet-shop.netlify.com/profile' 
+                <Route exact path="/createproduct" component = {CreateProduct}/>
+                <Route exact path='/profile' 
                 render={() => <Profile isLogged={isLogged} />}/>
-                <Route exact path='https://aio-pet-shop.netlify.com/products/:id' 
+                <Route exact path='/products/:id' 
                 component={(props) => { return <ProductDetails
                                 {...props}
                                 currentUser={currentUser}
@@ -73,7 +73,7 @@ function App() {
                                 isLogged={isLogged}
                         />
                     }}/>
-                <Route exact path='https://aio-pet-shop.netlify.com/category/:category' 
+                <Route exact path='/category/:category' 
                 component={(props) => { return <SortCategory
                                 {...props}
                                 currentUser={currentUser}

@@ -7,7 +7,7 @@ function SubNav() {
         <div id="footer" className="text-center navbar-fixed-top mt-auto">
         <div className="container">
           <div>
-          <a href="https://aio-pet-shop.netlify.com/"><img src="/css_js/images/logo1.png" alt="logo" style={{ width: '15%'}}/></a>
+          <a href="/"><img src="/css_js/images/logo1.png" alt="logo" style={{ width: '15%'}}/></a>
           </div>
       
     

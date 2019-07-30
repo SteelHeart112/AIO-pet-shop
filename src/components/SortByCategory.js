@@ -38,26 +38,26 @@ class SortCategory extends React.Component {
                     <div className="col-md-12">
                     <div className="portfolio-list">
                         <ul className="nav list-unstyled" id="portfolio-flters">
-                        <Link to={`https://aio-pet-shop.netlify.com/products`}><button >All</button></Link>
-                        <Link to={`https://aio-pet-shop.netlify.com/category/Foods`}><button>Foods</button></Link>
-                        <Link to={`https://aio-pet-shop.netlify.com/category/Toys`}><button>Toys</button></Link>
-                        <Link to={`https://aio-pet-shop.netlify.com/category/Walk-Ropes`}><button>Walk Ropes</button></Link>
-                        <Link to={`https://aio-pet-shop.netlify.com/category/Utensils`}><button>Utensils</button></Link>
-                        <Link to={`https://aio-pet-shop.netlify.com/category/Training`}><button>Training</button></Link>
-                        <Link to={`https://aio-pet-shop.netlify.com/category/Beds-Mattresses-Cat-Trees`}><button>Beds/ Mattresses/ Cat Trees</button></Link>
-                        <Link to={`https://aio-pet-shop.netlify.com/category/Cages-Bags-Fences`}><button>Cages/ Bags/ Fences</button></Link>
-                        <Link to={`https://aio-pet-shop.netlify.com/category/Cosmetics`}><button>Cosmetics</button></Link>
-                        <Link to={`https://aio-pet-shop.netlify.com/category/Costumes`}><button>Costumes</button></Link>
-                        <Link to={`https://aio-pet-shop.netlify.com/category/Grooming-Tools`}><button>Grooming Tools</button></Link>
-                        <Link to={`https://aio-pet-shop.netlify.com/category/Heath-Cares-Cat-Sands`}><button >Heath Cares/ Cat Sands</button></Link>
-                        <Link to={`https://aio-pet-shop.netlify.com/category/Walk-Your-Pet`}><button >Walk your pet</button></Link>
-                        <Link to={`https://aio-pet-shop.netlify.com/category/Grooming-Services`}><button >Grooming Services</button></Link>
-                        <Link to={`https://aio-pet-shop.netlify.com/category/Pet-Hotels`}><button >Pet Hotels</button></Link>
-                        <Link to={`https://aio-pet-shop.netlify.com/category/Matchmaking-Services`}><button >Matchmaking Services</button></Link>
-                        <Link to={`https://aio-pet-shop.netlify.com/category/Training-For-Pet`}><button >Training For Pet</button></Link>
-                        <Link to={`https://aio-pet-shop.netlify.com/category/Carrer-Courses`}><button >Carrer Courses</button></Link>
-                        <Link to={`https://aio-pet-shop.netlify.com/category/Puppies`}><button >Puppies</button></Link>
-                        <Link to={`https://aio-pet-shop.netlify.com/category/Kittens`}><button >Kittens</button></Link>
+                        <Link to={`/products`}><button >All</button></Link>
+                        <Link to={`/category/Foods`}><button>Foods</button></Link>
+                        <Link to={`/category/Toys`}><button>Toys</button></Link>
+                        <Link to={`/category/Walk-Ropes`}><button>Walk Ropes</button></Link>
+                        <Link to={`/category/Utensils`}><button>Utensils</button></Link>
+                        <Link to={`/category/Training`}><button>Training</button></Link>
+                        <Link to={`/category/Beds-Mattresses-Cat-Trees`}><button>Beds/ Mattresses/ Cat Trees</button></Link>
+                        <Link to={`/category/Cages-Bags-Fences`}><button>Cages/ Bags/ Fences</button></Link>
+                        <Link to={`/category/Cosmetics`}><button>Cosmetics</button></Link>
+                        <Link to={`/category/Costumes`}><button>Costumes</button></Link>
+                        <Link to={`/category/Grooming-Tools`}><button>Grooming Tools</button></Link>
+                        <Link to={`/category/Heath-Cares-Cat-Sands`}><button >Heath Cares/ Cat Sands</button></Link>
+                        <Link to={`/category/Walk-Your-Pet`}><button >Walk your pet</button></Link>
+                        <Link to={`/category/Grooming-Services`}><button >Grooming Services</button></Link>
+                        <Link to={`/category/Pet-Hotels`}><button >Pet Hotels</button></Link>
+                        <Link to={`/category/Matchmaking-Services`}><button >Matchmaking Services</button></Link>
+                        <Link to={`/category/Training-For-Pet`}><button >Training For Pet</button></Link>
+                        <Link to={`/category/Carrer-Courses`}><button >Carrer Courses</button></Link>
+                        <Link to={`/category/Puppies`}><button >Puppies</button></Link>
+                        <Link to={`/category/Kittens`}><button >Kittens</button></Link>
                         </ul>
                     </div>
                     </div>
@@ -71,7 +71,7 @@ class SortCategory extends React.Component {
                         return (
                           <div className="col-lg-2 col-md-4">
         <Card>
-            <Link to={`https://aio-pet-shop.netlify.com/products/${id}`}>
+            <Link to={`/products/${id}`}>
             <Card.Img variant="top" src={imageUrl} alt='product'/>
             </Link>
             <Card.Body>
