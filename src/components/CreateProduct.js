@@ -8,7 +8,7 @@ import { Container,
   Form,
   Modal } from "reactstrap";
 import Footer from './Footer';
-import NavBar from './Navbar';
+import SubNav from './Subnav';
 import useForm from './UseForm'
 import validate from './CreateProductValidateRules';
 
@@ -41,7 +41,7 @@ function CreateProduct() {
 
   return (
     <>     
-<NavBar/>
+<SubNav/>
     <div className="page-header">
     <div className="filter" />
       <Container className="mt-5" style={{zIndex:1}}>
