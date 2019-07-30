@@ -69,7 +69,7 @@ class SortCategory extends React.Component {
         <CardGroup>
         {this.state.details.map(({name,imageUrl,price,id,description}) => {
                         return (
-                          <div className="col-lg-2 col-md-4">
+                          <div className="col-lg-3 col-md-6">
         <Card>
             <Link to={`/products/${id}`}>
             <Card.Img variant="top" src={imageUrl} alt='product'/>
