@@ -43,7 +43,7 @@ class Profile extends Component {
      "address": this.state.address,
      "avatar_url": this.state.avatar_url,
    }
-   const url = 'https://127.0.0.1:5000/editprofile'
+   const url = 'https://pet-shop-final-project.herokuapp.com/editprofile'
    let response = await fetch(url, {
      method : 'POST',
      body : JSON.stringify(sending),
@@ -62,7 +62,7 @@ class Profile extends Component {
  }
 }
 fetchingUser = async () => {
-    const url = 'https://127.0.0.1:5000/profile'
+    const url = 'https://pet-shop-final-project.herokuapp.com/profile'
     let response = await fetch(url, {
       headers: new Headers({
         'Authorization': `Token ${localStorage.getItem('token')}`,

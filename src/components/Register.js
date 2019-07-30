@@ -22,7 +22,7 @@ class Register extends React.Component {
       pass_confirm: this.state.password
     };
 
-    const response = await fetch('https://127.0.0.1:5000/register', {
+    const response = await fetch('https://pet-shop-final-project.herokuapp.com/register', {
       method: 'POST',
       body: JSON.stringify(send),
       headers: new Headers({
@@ -126,7 +126,7 @@ class Register extends React.Component {
                       Register
                     </button>
                     <hr className='my-4' />
-                    <a href='https://127.0.0.1:5000/login/facebook'>
+                    <a href='https://pet-shop-final-project.herokuapp.com/login/facebook'>
                       <button
                         className='btn btn-lg btn-facebook btn-block text-uppercase'
                         type='submit'

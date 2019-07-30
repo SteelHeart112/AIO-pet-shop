@@ -4,7 +4,7 @@ import { Nav, Button } from 'react-bootstrap';
 
 const NavBar = ( {isLogged} ) => {
   const clearBEToken = async () => {
-    fetch('https://127.0.0.1:5000/logout', {
+    fetch('https://pet-shop-final-project.herokuapp.com/logout', {
       method: 'get',
       headers: new Headers({
         Authorization: `Token ${localStorage.getItem('token')}`,

@@ -16,7 +16,7 @@ class Login extends React.Component {
     e.preventDefault();
     let send = { email: this.state.email.toLowerCase(), password: this.state.password };
 
-    const response = await fetch('https://127.0.0.1:5000/login', {
+    const response = await fetch('https://pet-shop-final-project.herokuapp.com/login', {
       method: 'POST',
       body: JSON.stringify(send),
       headers: new Headers({
@@ -27,7 +27,7 @@ class Login extends React.Component {
     const result = await response.json();
     if (result.status === 'ok')
       return window.location.replace(
-        'http://localhost:3000/?access_token=' + result.token
+        'https://aio-pet-shop.netlify.com/?access_token=' + result.token
       );
     else if (result.status === 'fail') return alert(result.message);
   };

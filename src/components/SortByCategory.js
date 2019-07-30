@@ -18,7 +18,7 @@ class SortCategory extends React.Component {
   }
 
   getSingleCategory = cate => {
-    fetch(`https://127.0.0.1:5000/category/${cate}`)
+    fetch(`https://pet-shop-final-project.herokuapp.com/category/${cate}`)
       .then(res => res.json())
       .then(product_category => {
         this.setState({

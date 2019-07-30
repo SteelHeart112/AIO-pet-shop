@@ -11,7 +11,7 @@ function Products({isLogged}) {
   const [data, setData] = useState([]);
   
   const getProducts = () => {
-    fetch('https://127.0.0.1:5000/products')
+    fetch('https://pet-shop-final-project.herokuapp.com/products')
       .then(res => res.json())
       .then(info => {
           setData(info)

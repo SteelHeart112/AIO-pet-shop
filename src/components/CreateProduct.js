@@ -17,7 +17,7 @@ function CreateProduct() {
   const [modal, setModal] = useState(false);
   const postToDB = async () => {
 
-    const response = await fetch(`https://127.0.0.1:5000/create_product`, {
+    const response = await fetch(`https://pet-shop-final-project.herokuapp.com/create_product`, {
       method: "POST",
       headers: {
         'Accept': 'application/json, text/plain, */*',

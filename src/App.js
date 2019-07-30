@@ -28,7 +28,7 @@ function App() {
     const existingToken = localStorage.getItem('token');
     
     const getUser = async () => {
-        const response = await fetch('https://127.0.0.1:5000/profile', {
+        const response = await fetch('https://pet-shop-final-project.herokuapp.com/profile', {
             headers: {
               'Authorization': `Token ${localStorage.getItem('token')}`,
               'Content-Type': 'application/json'

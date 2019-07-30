@@ -18,8 +18,8 @@ class ProductDetails extends React.Component {
     this.getSingleProduct_id(this.props.match.params.id);
   }
 
-  getSingleProduct_id = num => {
-    fetch(`https://127.0.0.1:5000/product/${num}`)
+  getSingleProduct_id = id => {
+    fetch(`https://pet-shop-final-project.herokuapp.com/product/${id}`)
       .then(res => res.json())
       .then(product_details => {
         this.setState({
